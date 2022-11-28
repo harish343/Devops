@@ -1,0 +1,48 @@
+3rd leacutre
+
+ON AWS E2 MICRO INSTANCE
+CD PROJECTS
+GIT CLONE https://github.com/shreys7/django-todo.git
+cd 
+pip3 install django
+rest of instruction in github
+
+
+4th lecture
+
+run server in network
+python3 manage.py runserver 0.0.0.0:8000
+
+go e2 instagnce 
+securit tab -> securtiy gropus => edit inbound rules => 
+
+ in settins.py file in django allows for all hosts
+
+nohup command
+	ingoring input and appending output 
+	nohup python3 manage.py runserver 0.0.0.0:80 &
+
+to stop service
+	lsof -i:8001
+	kill -9 $processid
+
+
+docker installation
+	sudo apt-get install docker.io
+	vi Dockerfile
+		insert 
+			FROM python:3
+			RUN pip install django==3.2
+
+			COPY source destination
+			RUN python manage.py migrate
+			CMD ["python",manage.py","runserver","0.0.0.0:8001"]
+			
+		escape :wq
+		sudo docker build . -t tododocker
+
+	sudo docker ps
+	sudo docker run -p 8001:8001 containerid
+	sudo docker run -d -p 8001:8001 containerid //-d run in background daemon
+
+			

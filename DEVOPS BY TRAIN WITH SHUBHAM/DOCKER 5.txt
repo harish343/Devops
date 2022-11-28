@@ -1,0 +1,49 @@
+https://www.trainwithshubham.com/courses/Batch-II---Python-For-DevOps-62f4ad5ee4b070b49f3027b2
+
+jenkins installation
+sudo apt update
+
+sudo apt install openjdk-11-jre
+
+java -version
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+
+sudo apt-get update
+
+
+sudo apt-get install jenkins
+
+sudo systemctl enable jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+jenkins is start at 8080 by default port
+
+to see password 
+ 		sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+		INSTALL SUGGESTED PLUGIN
+		
+		create user
+
+
+
+Instatllation with docker of jenkins
+\\ paused jenkins
+	sudo systemctl stop jenkins
+	sudo systemctl status jenkins
+	
+
+clean installation jenkins
+
+	sudo docker pull -d -p 8080:8080 docker.io/jenkins/jenkins:latest
